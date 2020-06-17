@@ -12,10 +12,12 @@ Python3 & Other stuffs
 #### How to Install?
 
 ##### Windows 10(in CMD)
+    아래 보이는 명령어를 한 줄씩 CMD 창에 입력하면 된다
     > pip install --upgrade pip
     > pip install JPype1-0.5.7-cp27-none-win_amd64.whl
     > pip install konlpy
 ##### Mac OS
+    아래 보이는 명령어를 한 줄씩 터미널 창에 입력하면 된다
     $ python3 -m pip install --upgrade pip
     $ python3 -m pip install konlpy        # Python 3.x
 
@@ -27,6 +29,7 @@ Python3 & Other stuffs
      $ python3 -m pip install konlpy       # Python 3.x
 
 ##### CentOS(7~8)
+    아래 보이는 명령어를 한 줄씩 터미널 창에 입력하면 된다
     $ sudo yum install gcc-c++ java-1.8.0-openjdk-devel python3 python3-devel python3-pip make diffutils
     $ python3 -m pip install --upgrade pip
     $ python3 -m pip install konlpy     # Python 3.x
