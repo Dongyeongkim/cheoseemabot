@@ -34,5 +34,7 @@ Python3 & Other stuffs
     $ python3 -m pip install --upgrade pip
     $ python3 -m pip install konlpy     # Python 3.x
     
+##### More Information?: https://konlpy.org/ko/latest/install/ 
+    
 
 
