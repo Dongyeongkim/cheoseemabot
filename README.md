@@ -37,4 +37,4 @@ Python3 & Other stuffs
 ##### More Information?: https://konlpy.org/ko/latest/install/ 
     
 
-
+Using Word_Vectorization from: https://github.com/park1200656/KnuSentiLex
