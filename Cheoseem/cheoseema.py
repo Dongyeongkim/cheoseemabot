@@ -6,9 +6,6 @@ from konlpy.tag import Komoran
 from textrank import TextRank, RawSentenceReader, RawTaggerReader
 
 
-
-
-
 class cheoseema(object):
     def __init__(self, sentence_list):
         tsv_file = open("word_vector.tsv", 'r')
@@ -20,6 +17,7 @@ class cheoseema(object):
     # 처지
     def 처지(self):
         tr = TextRank()
+        from konlpy.tag import Komoran
         tagger = Komoran()
         stopword = set([('있', 'VV'), ('하', 'VV'), ('되', 'VV')])
         tr.loadSents(RawSentenceReader('x.txt'),
@@ -27,9 +25,10 @@ class cheoseema(object):
                                          tagger.pos(sent)))
         tr.build()
         ranks = tr.rank()
-        for k in sorted(ranks, key=ranks.get, reverse=True)[:100]:
-            print("\t".join([str(k), str(ranks[k]), str(tr.dictCount[k])]))
-        return tr.summarize(0.2)
+        if tr.summarize(0.4) is None:
+            return "모름"
+        else:
+            return tr.summarize(0.4)
 
     # 심정
     def 심정(self):
@@ -37,11 +36,11 @@ class cheoseema(object):
         stopword = set([('있', 'VV'), ('하', 'VV'), ('되', 'VV'), ('없', 'VV')])
         tr.load(RawTaggerReader('x.txt'), lambda w: w not in stopword and (w[1] in ('NNG', 'NNP', 'VV', 'VA')))
         tr.build()
-        kw = tr.extract(0.1)
-        kw_l = []
-        for k in sorted(kw, key=kw.get, reverse=True):
-            kw_l.append((k, kw[k]))
-        return kw_l
+        kw = tr.extract(0.4)
+        if kw is None:
+            return "모름"
+        else:
+            return kw
 
     # 어조
     def 어조(self):
