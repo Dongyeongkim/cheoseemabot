@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>처심어 번역기</title>
+</head>
+<body>
+<h3>처심어 번역기입니다. 원문을 입력해주세요.</h3>
+<form action="{{ url_for('translate') }}" method="post">
+    <textarea name="text", cols="40", rows="8"></textarea>
+    <br>
+    <input type="submit", value="Submit"></form>
+</form>
+<button onclick="location.href='/' ">돌아가기</button>
+
+</body>
+</html>

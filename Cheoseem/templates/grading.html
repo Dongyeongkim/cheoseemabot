@@ -1,0 +1,31 @@
+
+<!DOCTYPE html>
+<script>
+     function value_check() {
+        var check_count = document.getElementsByName("score").length;
+
+        for (var i=0; i<check_count; i++) {
+            if (document.getElementsByName("score")[i].checked == true) {
+                alert(document.getElementsByName("score")[i].value+"점을 주셨습니다.");
+            }
+        }
+    }
+</script>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>처심어 번역기</title>
+</head>
+<body>
+<h3> 처심어 번역기에 대한 평가를 진행해주세요!</h3>
+<input type="radio" name="score" value=0 /> 0점
+<input type="radio" name="score" value=1 /> 1점
+<input type="radio" name="score" value=2 /> 2점
+<input type="radio" name="score" value=3 /> 3점
+<input type="radio" name="score" value=4 /> 4점
+<input type="radio" name="score" value=5 /> 5점
+<p id="score"></p>
+<button onclick="value_check()">평가하기</button>
+<button onclick="location.href='/' ">돌아가기</button>
+</body>
+</html>
