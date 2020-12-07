@@ -19,16 +19,11 @@ def translate():
 
 @app.route('/translate', methods=['POST'])
 def trup():
-    text = request.form['text']
-    f = open("x.txt", 'w')
-    f.write(text)
-    f.close()
-    kkma = Kkma()
-    f = open('x.txt', 'r')
-    sentences = f.read()
-    sentence_list = kkma.sentences(sentences)
-    chsr = chs(sentence_list)
-    return chsr.처지(), chsr.심정(), chsr.어조()
+    text = request.form['text'].rstrip("\n")
+    f = open("x.txt", 'w'); f.write(text); f.close()
+    kkma = Kkma(); f = open('x.txt', 'r'); sentences = f.read()
+    sentence_list = kkma.sentences(sentences); chsr = chs(sentence_list)
+    return render_template("result.html", 처지=chsr.처지(), 심정=chsr.심정(), 어조=chsr.어조())
 
 
 @app.route('/evaluate')
